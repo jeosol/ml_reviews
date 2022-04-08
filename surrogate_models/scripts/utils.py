@@ -1,3 +1,7 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
 def create_data(obj, num_rows, num_cols):
     id = -1
     data = np.zeros((num_rows * num_cols, 3))
@@ -15,7 +19,8 @@ def plot_data(X, y):
     fig = plt.figure()
     ax = fig.add_subplot(projection='3d')
     #for i in range(len(X)): 
-    ax.scatter(X.iloc[:,0], X.iloc[:,1], y, cmap='viridis')
+    #ax.scatter(X.iloc[:,0], X.iloc[:,1], y, cmap='viridis')
+    ax.scatter(X[:,0],X[:,1], y, cmap='viridis')
     
 def plot_3d_surface(y, num_rows):
     X, Y = np.meshgrid(np.arange(num_rows), np.arange(num_rows))
